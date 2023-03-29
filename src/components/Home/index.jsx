@@ -24,8 +24,8 @@ const Subheading = styled.p`
 function Home() {
   return (
     <Container>
-      <Heading>Welcome to the best NFT Collection!</Heading>
-      <Subheading>Here you can find the best NFTs.</Subheading>
+      <Heading>Welcome to the best shop collection!</Heading>
+      <Subheading>Here you can find your best deals.</Subheading>
     </Container>
   );
 }

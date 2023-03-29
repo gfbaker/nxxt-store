@@ -6,27 +6,31 @@ import axios from "axios";
 import Footer from "./components/Footer";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./components/Home";
+import ItemDetail from "./components/ItemDetail";
+import ItemFilter from "./components/ItemFilter";
 
 function App() {
-	const [nfts, setNFTs] = useState([]);
+	const [items, setItems] = useState([]);
 
-	const getNFTs = async () => {
+	const getItems = async () => {
 		const { data } = await axios("https://fakestoreapi.com/products");
-		setNFTs(data);
+		setItems(data);
 	};
 
 	useEffect(() => {
-		getNFTs();
+		getItems();
 	}, []);
-
-	console.log(nfts);
+	
 	return (
 		<>
 			<NavBar />
 			<Routes>
-				<Route path="/" element={<Navigate to="/home" />} />
-				<Route path="/home" element={<Home />} />	
-				<Route path="/collections" element={<ItemListContainer nfts={nfts} />} />
+				<Route path="/" element={<Home />} />
+				<Route path="/collection" element={<ItemListContainer items={items} />} />
+				<Route path="/collection/:id" element={<ItemDetail />} />
+				<Route path="/category/:category" element={<ItemFilter />} />
+				<Route path="/category/:category/:id" element={<ItemDetail />} />
+				<Route path="/404" element={<div className="div-error"><img src="./cat404.jpeg" alt="404" /></div>} />
 			</Routes>
 			<Footer />
 		</>

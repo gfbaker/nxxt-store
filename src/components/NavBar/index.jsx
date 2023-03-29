@@ -13,8 +13,10 @@ import { NavLink } from "react-router-dom";
 function ResponsiveAppBar() {
 	const [anchorElNav, setAnchorElNav] = React.useState(null);
 	const [isScrolling, setIsScrolling] = React.useState(false);
+
 	const activeStyle = {
-		backgroundColor: "#e0e0e0",
+		color: "#c58b7d",
+		opacity: [0.9, 0.8, 0.7],
 	};
 
 	const handleScroll = () => {
@@ -43,8 +45,7 @@ function ResponsiveAppBar() {
 			sx={{
 				backgroundColor: isScrolling ? "rgba(0, 0, 0, 0.8)" : "transparent",
 				opacity: isScrolling ? 0.9 : 1,
-			}}
-		>
+			}}>
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 					<Typography
@@ -60,8 +61,7 @@ function ResponsiveAppBar() {
 							letterSpacing: ".3rem",
 							color: "inherit",
 							textDecoration: "none",
-						}}
-					>
+						}}>
 						<img src="./logo-icon.png" alt="Logo" border="0" />
 					</Typography>
 					<Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -71,8 +71,7 @@ function ResponsiveAppBar() {
 							aria-controls="menu-appbar"
 							aria-haspopup="true"
 							onClick={handleOpenNavMenu}
-							color="inherit"
-						>
+							color="inherit">
 							<MenuIcon />
 						</IconButton>
 						<Menu
@@ -91,8 +90,7 @@ function ResponsiveAppBar() {
 							onClose={handleCloseNavMenu}
 							sx={{
 								display: { xs: "block", md: "none" },
-							}}
-						></Menu>
+							}}></Menu>
 					</Box>
 					<Typography
 						variant="h5"
@@ -100,16 +98,9 @@ function ResponsiveAppBar() {
 						component="a"
 						href=""
 						sx={{
-							mr: 2,
 							display: { xs: "flex", md: "none" },
 							flexGrow: 1,
-							fontFamily: "monospace",
-							fontWeight: 700,
-							letterSpacing: ".3rem",
-							color: "inherit",
-							textDecoration: "none",
-						}}
-					>
+						}}>
 						<img src="./logo-icon.png" alt="Logo" border="0" />
 					</Typography>
 					<Box
@@ -117,19 +108,51 @@ function ResponsiveAppBar() {
 							flexGrow: 1,
 							display: { xs: "none", md: "flex" },
 							justifyContent: "flex-end",
-						}}
-					>
+							alignItems: "center",
+						}}>
 						<NavLink
-							to="/home"
-							style={({ isActive }) => (isActive ? activeStyle : undefined)}
-							sx={{ my: 2, color: 'white', display: 'block' }}>
-							<p>Home</p>
+							to="/"
+							style={({ isActive }) =>
+								isActive ? { ...activeStyle, color: "red" } : undefined
+							}
+							sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'underline' }}>
+							HOME
 						</NavLink>
 						<NavLink
-							to="/collections"
-							style={({ isActive }) => (isActive ? activeStyle : undefined)}
-							sx={{ my: 2, color: 'white', display: 'block' }}>
-							<p>Collections</p>
+							to="/collection"
+							style={({ isActive }) =>
+								isActive ? { ...activeStyle, color: "red" } : undefined
+							}
+							sx={{ mx: 2, color: "white", fontSize: "18px", fontWeight: "bold", textDecoration: "none",
+							}}>
+							COLLECTION
+						</NavLink>
+						<NavLink to="/category/jewelery"
+							style={({ isActive }) =>
+								isActive ? { ...activeStyle, color: "red" } : undefined
+							}>
+							JEWELERY
+						</NavLink>
+						<NavLink
+							to="/category/electronics"
+							style={({ isActive }) =>
+								isActive ? { ...activeStyle, color: "red" } : undefined
+							}>
+							ELECTRONICS
+						</NavLink>
+						<NavLink
+							to="/category/men's clothing"
+							style={({ isActive }) =>
+								isActive ? { ...activeStyle, color: "red" } : undefined
+							}>
+							MEN CLOTHING
+						</NavLink>
+						<NavLink
+							to="/category/women's clothing"
+							style={({ isActive }) =>
+								isActive ? { ...activeStyle, color: "red" } : undefined
+							}>
+							WOMEN CLOTHING
 						</NavLink>
 						<CartWidget />
 					</Box>
