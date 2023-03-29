@@ -16,7 +16,7 @@ function ResponsiveAppBar() {
 
 	const activeStyle = {
 		color: "#c58b7d",
-		opacity: [0.9, 0.8, 0.7],
+		boxShadow: "0px 0px 2px 2px #c55d56",
 	};
 
 	const handleScroll = () => {
@@ -113,44 +113,55 @@ function ResponsiveAppBar() {
 						<NavLink
 							to="/"
 							style={({ isActive }) =>
-								isActive ? { ...activeStyle, color: "red" } : undefined
+								isActive ? { ...activeStyle  } : undefined
 							}
-							sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'underline' }}>
+							sx={{
+								my: 2,
+								color: "white",
+								display: "block",
+								textDecoration: "underline",
+							}}>
 							HOME
 						</NavLink>
 						<NavLink
 							to="/collection"
 							style={({ isActive }) =>
-								isActive ? { ...activeStyle, color: "red" } : undefined
+								isActive ? { ...activeStyle } : undefined
 							}
-							sx={{ mx: 2, color: "white", fontSize: "18px", fontWeight: "bold", textDecoration: "none",
+							sx={{
+								mx: 2,
+								color: "white",
+								fontSize: "18px",
+								fontWeight: "bold",
+								textDecoration: "none",
 							}}>
 							COLLECTION
 						</NavLink>
-						<NavLink to="/category/jewelery"
+						<NavLink
+							to="/category/jewelery"
 							style={({ isActive }) =>
-								isActive ? { ...activeStyle, color: "red" } : undefined
+								isActive ? { ...activeStyle } : undefined
 							}>
 							JEWELERY
 						</NavLink>
 						<NavLink
 							to="/category/electronics"
 							style={({ isActive }) =>
-								isActive ? { ...activeStyle, color: "red" } : undefined
+								isActive ? { ...activeStyle } : undefined
 							}>
 							ELECTRONICS
 						</NavLink>
 						<NavLink
 							to="/category/men's clothing"
 							style={({ isActive }) =>
-								isActive ? { ...activeStyle, color: "red" } : undefined
+								isActive ? { ...activeStyle } : undefined
 							}>
 							MEN CLOTHING
 						</NavLink>
 						<NavLink
 							to="/category/women's clothing"
 							style={({ isActive }) =>
-								isActive ? { ...activeStyle, color: "red" } : undefined
+								isActive ? { ...activeStyle } : undefined
 							}>
 							WOMEN CLOTHING
 						</NavLink>

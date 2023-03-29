@@ -4,7 +4,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Footer from "./components/Footer";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import ItemDetail from "./components/ItemDetail";
 import ItemFilter from "./components/ItemFilter";
