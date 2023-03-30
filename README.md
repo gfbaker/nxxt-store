@@ -8,4 +8,4 @@ NXXT-STORE es una tienda virtual para comprar NFT's
 npm run dev
 
 ### Vercel Deploy:
-https://nxxt-store-osydgin98-gfbaker.vercel.app
+[https://nxxt-store-gfbaker.vercel.app/](https://nxxt-store-gfbaker.vercel.app/)
