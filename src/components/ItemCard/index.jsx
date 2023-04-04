@@ -10,7 +10,7 @@ export default function Item({ item }) {
 		<Grid>
 			<Card
 				sx={{ "&:hover": { opacity: [0.9, 0.8, 0.7],}}}>
-				<Link to={`${item.id}`}>
+				<Link to={`/item/${item.id}`}>
 					<CardActionArea>
 						<CardMedia component="img" sx={{ height: 500, objectFit: "cover"}} image={item.image} alt={item.title} />
 					</CardActionArea>

@@ -124,20 +124,6 @@ function ResponsiveAppBar() {
 							HOME
 						</NavLink>
 						<NavLink
-							to="/collection"
-							style={({ isActive }) =>
-								isActive ? { ...activeStyle } : undefined
-							}
-							sx={{
-								mx: 2,
-								color: "white",
-								fontSize: "18px",
-								fontWeight: "bold",
-								textDecoration: "none",
-							}}>
-							COLLECTION
-						</NavLink>
-						<NavLink
 							to="/category/jewelery"
 							style={({ isActive }) =>
 								isActive ? { ...activeStyle } : undefined
