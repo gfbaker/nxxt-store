@@ -11,13 +11,11 @@ export default function CartTable({ onCheckOutClick }) {
 	return (
 		<>
 			<TableContainer component={Paper}>
-				<Table sx={{ minWidth: 800 }} aria-label="spanning table">
-				<TableHead
-						sx={{
-							backgroundImage:
-								"linear-gradient(to bottom right, #F8A170, #FFCD61)",
-						}}>
-						<TableCell align="center" colSpan={7}>Cart</TableCell>
+				<Table aria-label="spanning table">
+				<TableHead sx={{ backgroundImage: "linear-gradient(to bottom right, #F8A170, #FFCD61)"	}}>
+						<TableRow>
+							<TableCell align="center" colSpan={7}>Cart</TableCell>
+						</TableRow>
 						<TableRow sx={{backgroundColor: "#f2f2f2"}}>
 							<TableCell align="center">IMAGE</TableCell>
 							<TableCell align="left">DESCRIPTION</TableCell>
@@ -28,6 +26,7 @@ export default function CartTable({ onCheckOutClick }) {
 						</TableRow>
 					</TableHead>
 					<TableBody>
+						<TableRow>
 						{value.cart.map((item) => (
 							<TableRow key={item.id}>
 								<TableCell align="center"><img width={100} src={item.image}/></TableCell>
@@ -40,6 +39,7 @@ export default function CartTable({ onCheckOutClick }) {
 								</TableCell>
 							</TableRow>
 						))}
+						</TableRow>
 						<TableRow>
 							<TableCell rowSpan={4} />
 							<TableCell colSpan={4} sx={{ backgroundColor: "#f2f2f2" }}>

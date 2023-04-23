@@ -20,9 +20,7 @@ export default function Item({ item }) {
 				<Link to={`/item/${item.id}`}>
 					<CardActionArea>
 						<CardMedia
-							component="img"
-							sx={{ height: 450, objectFit: "cover", padding: 0, transition: "all 0.3s ease-in-out",
-							}}
+							component="img" sx={{ height: 450, objectFit: "cover", padding: 0, transition: "all 0.3s ease-in-out" }}
 							image={item.image}
 							alt={item.title}
 						/>
@@ -30,6 +28,5 @@ export default function Item({ item }) {
 				</Link>
 			</Card>
 		</Grid>
-
 	);
 }

@@ -7,12 +7,11 @@ import { collection, getDocs } from "firebase/firestore";
 import db from "../../../db/firebase-config";
 import Typography from "@mui/material/Typography";
 
-
 export default function ItemListContainer() {
+
 	const [items, setItems] = useState([]);
 	const { categoryId } = useParams();
 	const itemsRef = collection(db, "nfts");
-	console.log(items);
 
 	const getItems = async () => {
 		const itemsCollection = await getDocs(itemsRef);
@@ -29,7 +28,7 @@ export default function ItemListContainer() {
 			setItems(itemsArray);
 		}
 	};
-
+	
 	useEffect(() => {
 		getItems();
 	}, [categoryId]);
@@ -38,12 +37,7 @@ export default function ItemListContainer() {
 		<Container sx={{ marginTop: "140px", marginBottom: "30px" }}>
 			<div style={{ display: "flex", justifyContent: "center", marginBottom: "20px" }}>
 				<Typography variant="h6" noWrap>
-					<img
-						src="../../../public/nftsSlogan.png"
-						alt="Logo"
-						border="0"
-						width="410px"
-					/>
+					<img src="./nftsSlogan.png" alt="Logo" border="0" width="410px"/>
 				</Typography>
 			</div>
 			<Grid container spacing={1}>

@@ -15,8 +15,8 @@ export default function Cart() {
 	};
 
 	const handleOrder = (orderId) => {
-			setOrderId(orderId);
-		};
+		setOrderId(orderId);
+	};
 
 	return (
 		<>

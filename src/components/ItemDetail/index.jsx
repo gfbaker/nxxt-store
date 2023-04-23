@@ -63,8 +63,7 @@ export default function ItemDetail() {
 			</Box>
 		);
 	}
-	console.log(loading);
-
+	
 	if (!item) {
 		return <Navigate to="/404" />;
 	}

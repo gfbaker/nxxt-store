@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { TableContainer, Paper, Table, TableCell, TableHead, TextField, Button, Stack, Box } from "@mui/material";
 import { useCartContext } from "../../../contexts/CartContext";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { Container, TableRow } from "@mui/material";
 
 const CheckOutForm = ({onOrderClick}) => {
 
 	const { ...value  } = useCartContext();
-
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
@@ -14,9 +14,13 @@ const CheckOutForm = ({onOrderClick}) => {
 	const [phoneNumber, setPhoneNumber] = useState("");
 
 	    const order = {
+			date: new Date(),
 			buyer: { firstName, lastName, email, emailValidation, phoneNumber
 			},
-			items: value.cart.map((item) => ({ id: item.id, title: item.title, price: item.price, quantity: item.quantity}))};
+			items: value.cart.map((item) => ({ id: item.id, title: item.title, description: item.description,
+				price: item.price, quantity: item.quantity})),
+			total: value.totalPrice,
+			};
 
 		const canSubmit = () => {
 			return (
@@ -51,9 +55,11 @@ const CheckOutForm = ({onOrderClick}) => {
 							backgroundImage:
 								"linear-gradient(to bottom right, #F8A170, #FFCD61)",
 						}}>
+						<TableRow>
 						<TableCell align="center" colSpan={7}>Your Information</TableCell>
+						</TableRow>
 					</TableHead>
-				<div style={{marginTop:"30px" , padding: "10px"}}>
+				<Container style={{marginTop:"30px" , padding: "10px"}}>
 				<form sx={{ padding: "16px" }}>
 					<Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
 						<TextField
@@ -87,7 +93,6 @@ const CheckOutForm = ({onOrderClick}) => {
 						fullWidth
 						required
 						sx={{ mb: 4 }}
-						onFocus={() => setErrorMessage(false)}
 					/>
 					<TextField
 						type="email"
@@ -99,7 +104,6 @@ const CheckOutForm = ({onOrderClick}) => {
 						required
 						fullWidth
 						sx={{ mb: 4 }}
-						onFocus={() => setErrorMessage(false)}
 					/> 
 					<TextField
 						type="number"
@@ -113,7 +117,7 @@ const CheckOutForm = ({onOrderClick}) => {
 						sx={{ mb: 4 }}
 					/>
 				</form>
-				</div>
+				</Container>
 				</Table>
 			</TableContainer>
 			<Box
