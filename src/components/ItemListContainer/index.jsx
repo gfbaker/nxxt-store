@@ -37,7 +37,7 @@ export default function ItemListContainer() {
 		<Container sx={{ marginTop: "140px", marginBottom: "30px" }}>
 			<div style={{ display: "flex", justifyContent: "center", marginBottom: "20px" }}>
 				<Typography variant="h6" noWrap>
-					<img src="./nftsSlogan.png" alt="Logo" border="0" width="410px"/>
+					<img src="/nftsSlogan.png" alt="Slogan" border="0" width="410px"/>
 				</Typography>
 			</div>
 			<Grid container spacing={1}>

@@ -8,13 +8,14 @@ import { Link } from "react-router-dom";
 
 export default function CartTable({ onCheckOutClick }) {
 	const { ...value  } = useCartContext();
+
 	return (
 		<>
 			<TableContainer component={Paper}>
 				<Table aria-label="spanning table">
 				<TableHead sx={{ backgroundImage: "linear-gradient(to bottom right, #F8A170, #FFCD61)"	}}>
 						<TableRow>
-							<TableCell align="center" colSpan={7}>Cart</TableCell>
+							<TableCell align="center" colSpan={6}>Cart</TableCell>
 						</TableRow>
 						<TableRow sx={{backgroundColor: "#f2f2f2"}}>
 							<TableCell align="center">IMAGE</TableCell>
@@ -26,11 +27,10 @@ export default function CartTable({ onCheckOutClick }) {
 						</TableRow>
 					</TableHead>
 					<TableBody>
-						<TableRow>
 						{value.cart.map((item) => (
 							<TableRow key={item.id}>
-								<TableCell align="center"><img width={100} src={item.image}/></TableCell>
-								<TableCell width={"300px"}>{item.description}</TableCell>
+								<TableCell align="center"><Link to={`/item/${item.id}`}><img width={100} src={item.image}/></Link></TableCell>
+								<TableCell width={"300px"}><h4>{item.title}</h4>{item.description}</TableCell>
 								<TableCell align="center">{item.quantity}</TableCell>
 								<TableCell align="center">${item.price}</TableCell>
 								<TableCell align="center">${(item.quantity*item.price).toFixed(2)}</TableCell>
@@ -39,10 +39,9 @@ export default function CartTable({ onCheckOutClick }) {
 								</TableCell>
 							</TableRow>
 						))}
-						</TableRow>
 						<TableRow>
-							<TableCell rowSpan={4} />
-							<TableCell colSpan={4} sx={{ backgroundColor: "#f2f2f2" }}>
+							<TableCell rowSpan={2} />
+							<TableCell colSpan={4} sx={{ backgroundColor: "#f2f2f2", align:"right" }}>
 								Subtotal
 							</TableCell>
 							<TableCell align="center" sx={{ backgroundColor: "#f2f2f2" }}>$

@@ -39,7 +39,7 @@ function ResponsiveAppBar() {
 					<Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent: "flex-end",
 							alignItems: "center" }}>
 						<NavLink to="/" style={({ isActive }) => isActive ? { ...activeStyle } : undefined }
-							sx={{	my: 2, color: "white", 	display: "block", textDecoration: "underline" }}>
+							sx={{	my: 2, color: "#f2f2f2", 	display: "block", textDecoration: "underline" }}>
 							HOME
 						</NavLink>
 						<MenuPopupState/>

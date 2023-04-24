@@ -39,11 +39,17 @@ const CheckOutForm = ({onOrderClick}) => {
 				await addDoc(orderCollection, order)
 				.then((docRef) => {
 				  onOrderClick(docRef.id);
-				  console.log(`Document written with ID: ", ${docRef.id}`);
 				});
 			  } catch (e) {
-				alert("We are sorry, your order could not be processed");
+				alert("We are sorry, your order could not be processed. Please try");
 			  }
+			}
+
+			const scrollDown = () => {
+				window.scrollBy({
+					top: 600,
+					behavior: "smooth"
+				  });
 			}
 
 	return (
@@ -128,7 +134,8 @@ const CheckOutForm = ({onOrderClick}) => {
 					justifyContent: "right",
 				}}>
 				<Button 
-				onClick={addForm}
+				onClick={() => {
+					addForm() && scrollDown()}}
 				disabled={!canSubmit()}
 				sx={{
 					backgroundColor: "#222222",

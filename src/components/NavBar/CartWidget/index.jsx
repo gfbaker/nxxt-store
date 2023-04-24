@@ -6,7 +6,7 @@ function CartWidget() {
 
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <TbShoppingCart size={23} style={{ marginRight: '5px' }} />
+      <TbShoppingCart size={30} style={{ marginRight: '5px' }} />
       <span style={{ color: "#ff6961"}}>{totalProducts || ''}</span>
     </div>
   );

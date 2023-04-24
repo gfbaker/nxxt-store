@@ -2,9 +2,8 @@ import { TableContainer } from "@mui/material";
 import React from "react";
 import { Paper, Table, TableHead, TableBody, TableRow, TableCell } from "@mui/material";
 import { useState, useEffect } from "react";
-import Skeleton from "@mui/material/Skeleton";
-import Box from "@mui/material/Box";
 import "./style.css";
+
 
 function Order({ order }) {
     const [loading, setLoading] = useState(true);

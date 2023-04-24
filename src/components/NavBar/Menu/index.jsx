@@ -1,7 +1,7 @@
 import * as React from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { usePopupState, bindTrigger, bindMenu } from "material-ui-popup-state/hooks";
+import { usePopupState, bindTrigger, bindMenu} from "material-ui-popup-state/hooks";
 import { NavLink } from "react-router-dom";
 
 const MenuPopupState = () => {
@@ -9,7 +9,7 @@ const MenuPopupState = () => {
 	const popupState = usePopupState({ variant: "popover", popupId: "demoMenu" });
     const activeStyle = {
 		background: "linear-gradient(45deg, #F8A170, #FFCD61)", borderRadius: "3px",
-		color: "#000", fontSize: "18px"};
+		color: "#000", fontSize: "24px", width: "100%", textAlign: "center"};
 
 	return (
 		<>
